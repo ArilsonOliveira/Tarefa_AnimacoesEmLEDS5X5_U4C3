@@ -26,7 +26,7 @@ int main()
     while (true){
         char key = Get_Key_clicked(PINS_ROWS_KEYPAD, PINS_COLUMNS_KEYPAD);
         switch (key){
-        case 'A':
+        case '4':
             // Array com as frequências (em Hz) dos sons característicos do Pac-Man
             const int pacmanFrequencies[] = {440, 494, 523, 587, 659, 698, 784, 880, 988, 1047,1175,1319,1397,1568,1760,1976,2637,2794,3136,3520,3951,4186,4699,5237};
             // Array com as durações correspondentes (em ms) para cada frequência
