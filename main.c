@@ -12,6 +12,7 @@
 #include "rosto.h"
 #include "pato.h"
 #include "girafa.h"
+#include "chuva.h"
 
 
 
