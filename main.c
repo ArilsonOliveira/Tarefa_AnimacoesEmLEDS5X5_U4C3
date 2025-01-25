@@ -10,6 +10,8 @@
 #include "pacman.h"
 #include "colorido.h"
 #include "rosto.h"
+#include "pato.h"
+#include "girafa.h"
 
 
 
