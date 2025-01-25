@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include "pico/bootrom.h"
 #include "pico/stdlib.h"
 #include "configGpios.h"
 #include "tecladoMatricial4x4.h"
 #include "leds.h"
 #include "buzzer.h"
 #include "pacman.h"
+#include "colorido.h"
 
 #define PIN_LEDS 7   // Pino de controle
 #define LED_COUNT 25 // Número de LEDs na fita
@@ -42,11 +44,26 @@ int main()
             controlar_buzzer(BUZZER_PIN, false);
             sleep_ms(1000);
             break;
+        case '9':
+            colorido();
+            break;
+        case '*':
+            printf("Entrando no modo de gravação via USB...\n");
+            sleep_ms(1000); // Pequeno delay para garantir que a mensagem seja exibida antes do reboot
+            printf("1...\n");
+            sleep_ms(1000);
+            printf("2...\n");
+            sleep_ms(1000);
+            printf("3...\n");
+            sleep_ms(1000);
+            printf("Rebootando...\n");
+            reset_usb_boot(0, 0); // Reboot para modo de gravação
+            break;
         default:
             Leds_Show_All(NULL, false);
             break;
         }
-        // Draw_Pac_man();
     }
     return 0;
 }
+
