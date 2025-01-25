@@ -12,6 +12,7 @@
 #include "rosto.h"
 #include "pato.h"
 #include "girafa.h"
+#include "chuva.h"
 
 
 
@@ -33,6 +34,9 @@ int main()
     while (true){
         char key = Get_Key_clicked(PINS_ROWS_KEYPAD, PINS_COLUMNS_KEYPAD);
         switch (key){
+        case '1':
+            chuva_pixels();
+            break;
         case '4':
             Draw_Pac_man(BUZZER_PIN);
             break;
