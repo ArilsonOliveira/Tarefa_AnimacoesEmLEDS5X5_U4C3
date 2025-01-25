@@ -40,6 +40,9 @@ int main()
         case '7':
             movimento_girafa();
             break;
+        case '8':
+            animacao_pato();
+            break;
         case '9':
             colorido();
             break;
