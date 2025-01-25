@@ -42,6 +42,12 @@ int main()
             controlar_buzzer(BUZZER_PIN, false);
             sleep_ms(1000);
             break;
+        case '9':
+            Leds_Show_All(NULL, true);
+            break;
+        case '*':
+            Leds_Show_All(NULL, false);
+            break;
         default:
             Leds_Show_All(NULL, false);
             break;
