@@ -9,6 +9,9 @@
 #include "buzzer.h"
 #include "pacman.h"
 #include "colorido.h"
+#include "rosto.h"
+
+
 
 #define PIN_LEDS 7   // Pino de controle
 #define LED_COUNT 25 // Número de LEDs na fita
@@ -30,6 +33,12 @@ int main()
         switch (key){
         case '4':
             Draw_Pac_man(BUZZER_PIN);
+            break;
+        case '6':
+            animacao_rosto();
+            break;
+        case '7':
+            movimento_girafa();
             break;
         case '9':
             colorido();
