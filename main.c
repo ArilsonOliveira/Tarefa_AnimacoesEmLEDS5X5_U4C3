@@ -14,6 +14,7 @@
 #include "girafa.h"
 #include "chuva.h"
 #include "contagem.h"
+#include "ledsBrancos.h"
 
 
 #define PIN_LEDS 7   // Pino de controle
@@ -66,6 +67,9 @@ int main()
             sleep_ms(1000);
             printf("Rebootando...\n");
             reset_usb_boot(0, 0); // Reboot para modo de gravação
+            break;
+        case '#':
+            Draw_Leds_Writes();
             break;
         default:
             Leds_Show_All(NULL, false);
