@@ -55,6 +55,12 @@ int main()
         case '9':
             colorido();
             break;
+        case 'B':
+            teclaB();
+            break;
+        case 'C': 
+            teclaC();
+            break;
         case '*':
             printf("Entrando no modo de gravação via USB...\n");
             sleep_ms(1000); // Pequeno delay para garantir que a mensagem seja exibida antes do reboot
