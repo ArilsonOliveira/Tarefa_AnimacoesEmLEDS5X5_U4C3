@@ -12,7 +12,6 @@ void contagem();
    no nível de intensidade de 100% da luminosidade máxima */
 void teclaB();
 
-
 /* função: teclaC
    funcionamento: ao pressionar a tecla B, todos os LEDs são ligados na cor vermelha, 
    no nível de intensidade de 80% da luminosidade máxima */
