@@ -43,7 +43,7 @@ static uint32_t frame_raio5[][3] = {
     {255, 255, 150}, {255, 255, 150}, {255, 255, 150}, {255, 255, 150}, {255, 255, 150}
 };
 
-void animacao_raio() {
+void raio() {
     Leds_Show_All(frame_raio1, true);
     sleep_ms(300);
     Leds_Show_All(frame_raio2, true);

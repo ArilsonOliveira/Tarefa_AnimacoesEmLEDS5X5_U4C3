@@ -3,6 +3,6 @@
 
 #include "pico/stdlib.h"
 
-void animacao_coracao();
+void coracao();
 
 #endif

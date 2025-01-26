@@ -42,7 +42,7 @@ static uint32_t frame_coracao5[][3] = {
 {0, 0, 0}, {0, 0, 0}, {255, 0, 0}, {0, 0, 0}, {0, 0, 0}
 };
 
-void animacao_coracao() {
+void coracao() {
     Leds_Show_All(frame_coracao1, true);
     sleep_ms(500);
     Leds_Show_All(frame_coracao2, true);

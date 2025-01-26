@@ -3,6 +3,6 @@
 
 #include "pico/stdlib.h"
 
-void animacao_raio();
+void raio();
 
 #endif
