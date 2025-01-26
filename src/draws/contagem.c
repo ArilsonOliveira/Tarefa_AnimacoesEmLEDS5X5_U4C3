@@ -80,7 +80,7 @@ static uint32_t frameTeclaC[][3] = {
     {80, 0, 0}, {80, 0, 0}, {80, 0, 0}, {80, 0, 0}, {80, 0, 0}           
 };
 
-/* função: teclaB
+/* função: teclaC
    funcionamento: ao pressionar a tecla B, todos os LEDs são ligados na cor vermelha, 
    no nível de intensidade de 80% da luminosidade máxima */
 void teclaC() {
