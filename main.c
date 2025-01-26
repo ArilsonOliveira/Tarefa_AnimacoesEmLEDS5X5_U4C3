@@ -13,6 +13,7 @@
 #include "pato.h"
 #include "girafa.h"
 #include "chuva.h"
+#include "alfabeto.h"
 
 
 
@@ -36,6 +37,9 @@ int main()
         switch (key){
         case '1':
             chuva_pixels();
+            break;
+        case '2':
+            exibir_letra_A();
             break;
         case '4':
             Draw_Pac_man(BUZZER_PIN);
