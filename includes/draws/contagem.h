@@ -3,5 +3,7 @@
 
 #include "pico/stdlib.h"
 void contagem();
+void teclaB();
+void teclaC();
 
 #endif
