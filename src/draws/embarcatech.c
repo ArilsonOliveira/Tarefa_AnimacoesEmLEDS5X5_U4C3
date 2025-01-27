@@ -1,5 +1,6 @@
 #include "leds.h"
 #include "buzzer.h"
+#include "embarcatech.h"
 
 
 
@@ -207,20 +208,85 @@ static uint32_t frame_19[][3] = {
     {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80}   // Linha 5
 };
 
+static uint32_t frame_20[][3] = {
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0},  // Linha 1
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 80},  // Linha 2
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80},  // Linha 3
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 80},  // Linha 4
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 80}   // Linha 5
+};
 
+static uint32_t frame_21[][3] = {
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0},  // Linha 1
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0},  // Linha 2
+    {0, 0, 80}, {0, 0, 80}, {0, 0, 0}, {0, 0, 80}, {0, 0, 80},  // Linha 3
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0},  // Linha 4
+    {0, 0, 80}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}   // Linha 5
+};
 
+static uint32_t frame_22[][3] = {
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 80},  // Linha 1
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 80},  // Linha 2
+    {0, 0, 80}, {0, 0, 80}, {0, 0, 80}, {0, 0, 0}, {0, 0, 80},  // Linha 3
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0},  // Linha 4
+    {0, 0, 80}, {0, 0, 80}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0}   // Linha 5
+};
 
+static uint32_t frame_23[][3] = {
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0},  // Linha 1
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0},  // Linha 2
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80}, {0, 0, 0},  // Linha 3
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80},  // Linha 4
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80}, {0, 0, 0}   // Linha 5
+};
 
+static uint32_t frame_24[][3] = {
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80},  // Linha 1
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0},  // Linha 2
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80},  // Linha 3
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 80}, {0, 0, 80}, {0, 0, 0},  // Linha 4
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80}   // Linha 5
+};
 
+static uint32_t frame_25[][3] = {
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0},  // Linha 1
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80},  // Linha 2
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 80},  // Linha 3
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 80},  // Linha 4
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 80}   // Linha 5
+};
 
+static uint32_t frame_26[][3] = {
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0},  // Linha 1
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0},  // Linha 2
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80},  // Linha 3
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0},  // Linha 4
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}   // Linha 5
+};
 
+static uint32_t frame_27[][3] = {
+    {0, 0, 80}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80},  // Linha 1
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0},  // Linha 2
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 80}, {0, 0, 0}, {0, 0, 80},  // Linha 3
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0},  // Linha 4
+    {0, 0, 80}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}   // Linha 5
+};
 
+static uint32_t frame_28[][3] = {
+    {0, 0, 80}, {0, 0, 80}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0},  // Linha 1
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0},  // Linha 2
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0},  // Linha 3
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0},  // Linha 4
+    {0, 0, 80}, {0, 0, 80}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0}   // Linha 5
+};
 
-
-
-
-
-
+static uint32_t frame_29[][3] = {
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80}, {0, 0, 0},  // Linha 1
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0},  // Linha 2
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80},  // Linha 3
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0},  // Linha 4
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80}, {0, 0, 0}   // Linha 5
+};
 
 
 
@@ -242,7 +308,7 @@ static uint32_t frame_19[][3] = {
     }
 }    */
 
-void exibir_letra_A() {
+void exibir_embarcatech() {
      //Leds_Show_All(letra_A, true); // Mostra a matriz da letra "A"
     //sleep_ms(6500);               // Tempo de exibição da letra
     //Leds_Show_All(letra_B, true);
@@ -252,46 +318,63 @@ void exibir_letra_A() {
     //Leds_Show_All(letra_D, true);
     //sleep_ms(500);
     Leds_Show_All(letra_E, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(frame_2, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(frame_3, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(frame_4, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(frame_5, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(frame_6, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(frame_7, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(frame_8, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(frame_9, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(frame_10, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(frame_11, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(letra_B, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(frame_13, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(frame_14, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(frame_15, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(frame_16, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(frame_17, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(letra_A, true);
-    sleep_ms(500);
+    sleep_ms(200);
     Leds_Show_All(frame_19, true);
-    sleep_ms(500);
+    sleep_ms(200);
+    Leds_Show_All(frame_20, true);
+    sleep_ms(200);
+    Leds_Show_All(frame_21, true);
+    sleep_ms(200);
+    Leds_Show_All(frame_22, true);
+    sleep_ms(200);
+    Leds_Show_All(frame_23, true);
+    sleep_ms(200);
+    Leds_Show_All(frame_24, true);
+    sleep_ms(200);
+    Leds_Show_All(frame_25, true);
+    sleep_ms(200);
+    Leds_Show_All(frame_26, true);
+    sleep_ms(200);
+    Leds_Show_All(frame_27, true);
+    sleep_ms(200);
+    Leds_Show_All(frame_28, true);
+    sleep_ms(200);
+    Leds_Show_All(frame_29, true);
+    sleep_ms(200);
     
-    
-
-
 
 }

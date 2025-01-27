@@ -13,7 +13,7 @@
 #include "pato.h"
 #include "girafa.h"
 #include "chuva.h"
-#include "alfabeto.h"
+#include "embarcatech.h"
 #include "contagem.h"
 #include "ledsBrancos.h"
 #include "raio.h"
