@@ -67,6 +67,7 @@ Para desenvolver o projeto foram necessários os seguintes recursos e ferramenta
 
 ├── includes                
 │   ├── draws
+|   |   ├── arco.h
 |   |   ├── chuva.h
 |   |   ├── colorico.h
 |   |   ├── contagem.h
@@ -86,6 +87,7 @@ Para desenvolver o projeto foram necessários os seguintes recursos e ferramenta
 ├── pios
 ├── src
 |   ├── draws
+|   |   ├── arco.c
 |   |   ├── chuva.c
 |   |   ├── colorico.c
 |   |   ├── contagem.c
@@ -128,7 +130,7 @@ Para desenvolver o projeto foram necessários os seguintes recursos e ferramenta
   - `tecladoMatricial4x4.h`: Funções para o teclado matricial.
   - `leds.h`: Controle de LEDs.
   - `buzzer.h`: Controle do buzzer.
-  - `pacman.h`, `colorido.h`, `rosto.h`, `pato.h`, `girafa.h`, `chuva.h`, `embarcatech.h`, `contagem.h`, `ledsBrancos.h`, `raio.h` e `leds_verde.h`: Implementações relacionadas a teclas específicas para executar animação na matriz de LEDs.
+  - `arco.h`, `pacman.h`, `colorido.h`, `rosto.h`, `pato.h`, `girafa.h`, `chuva.h`, `embarcatech.h`, `contagem.h`, `ledsBrancos.h`, `raio.h` e `leds_verde.h`: Implementações relacionadas a teclas específicas para executar animação na matriz de LEDs.
 
 ---
 
@@ -143,14 +145,14 @@ Para desenvolver o projeto foram necessários os seguintes recursos e ferramenta
   - **Tecla `2`**: Mostra animação da palavra "embarcatech" deslizando para a esquerda.
   - **Tecla `3`**: Faz a animação de um raio.
   - **Tecla `4`**: Mostra a animação do Pacman juntamente com o som do jogo e os fantasmas do jogo. 
-  - **Tecla `5`**: 
+  - **Tecla `5`**: Mostra animação de arco e flecha
   - **Tecla `6`**: Mostra um rosto feliz e um rosto triste.
   - **Tecla `7`**: Faz a animação de girafas passando.     
   - **Tecla `8`**: Faz a animação de patos em um lago.
   - **Tecla `9`**: São mostradas diferentes cores na matriz de LEDs.
-   - **Tecla `A`**: .
+   - **Tecla `A`**: Todos os LEDs são desligados.
   - **Tecla `B`**:  Todos os LEDs são ligados na cor azul, 
-   no nível de intensidade de 100% da luminosidade máxima .
+   no nível de intensidade de 100% da luminosidade máxima.
   - **Tecla `C`**: Todos os LEDs são ligados na cor vermelha, 
    no nível de intensidade de 80% da luminosidade máxima.
   - **Tecla `D`**: Todos os LEDs são ligados na cor verde, 

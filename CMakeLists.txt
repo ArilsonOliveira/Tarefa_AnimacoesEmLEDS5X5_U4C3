@@ -12,20 +12,6 @@ if (EXISTS ${picoVscode})
     include(${picoVscode})
 endif()
 # ====================================================================================
-# == DO NOT EDIT THE FOLLOWING LINES for the Raspberry Pi Pico VS Code Extension to work ==
-if(WIN32)
-    set(USERHOME $ENV{USERPROFILE})
-else()
-    set(USERHOME $ENV{HOME})
-endif()
-set(sdkVersion 2.1.0)
-set(toolchainVersion 13_3_Rel1)
-set(picotoolVersion 2.1.0)
-set(picoVscode ${USERHOME}/.pico-sdk/cmake/pico-vscode.cmake)
-if (EXISTS ${picoVscode})
-    include(${picoVscode})
-endif()
-# ====================================================================================
 # Generated Cmake Pico project file
 
 cmake_minimum_required(VERSION 3.13)
@@ -61,12 +47,12 @@ project(Tarefa_AnimacoesEmLeds5x5_U4C3 C CXX ASM)
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
-file(GLOB SRC_FILES_UTILS "src/utils/*.c")
-file(GLOB SRC_FILES_DRAWS "src/draws/*.c")
+file(GLOB INCLUDES_FILES "includes/**/*.h")
+file(GLOB SRC_FILES "src/**/*.c")
 add_executable(Tarefa_AnimacoesEmLeds5x5_U4C3
     main.c
-    ${SRC_FILES_DRAWS}
-    ${SRC_FILES_UTILS}
+    ${INCLUDES_FILES}
+    ${SRC_FILES}
 )
 
 pico_set_program_name(Tarefa_AnimacoesEmLeds5x5_U4C3 "Tarefa_AnimacoesEmLeds5x5_U4C3")

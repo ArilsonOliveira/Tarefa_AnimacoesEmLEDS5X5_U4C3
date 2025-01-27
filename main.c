@@ -18,7 +18,7 @@
 #include "ledsBrancos.h"
 #include "raio.h"
 #include "leds_verde.h"
-
+#include "arco.h"
 
 #define PIN_LEDS 7   // Pino de controle
 #define LED_COUNT 25 // Número de LEDs na fita
@@ -53,6 +53,9 @@ int main()
         case '4':
             Draw_Pac_man(BUZZER_PIN);
             break;
+        case '5':
+            arco();
+            break;
         case '6':
             animacao_rosto();
             break;
@@ -64,6 +67,9 @@ int main()
             break;
         case '9':
             colorido();
+            break;
+        case 'A':
+            desligar_leds();
             break;
         case 'B':
             teclaB();
