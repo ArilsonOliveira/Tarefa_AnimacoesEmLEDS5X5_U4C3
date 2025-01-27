@@ -42,7 +42,7 @@ int main()
             chuva_pixels();
             break;
         case '3':
-            void raio();
+            raio();
             break;
         case '4':
             Draw_Pac_man(BUZZER_PIN);
