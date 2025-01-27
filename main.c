@@ -16,6 +16,7 @@
 #include "contagem.h"
 #include "ledsBrancos.h"
 #include "raio.h"
+#include "leds_verde"
 
 
 #define PIN_LEDS 7   // Pino de controle
@@ -66,8 +67,8 @@ int main()
         case 'C': 
             teclaC();
             break;
-        // case 'D': 
-            // void raio();
+        case 'D': 
+            leds_verde();
             break;
         case '*':
             printf("Entrando no modo de gravação via USB...\n");
