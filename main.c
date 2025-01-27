@@ -42,7 +42,7 @@ int main()
             chuva_pixels();
             break;
         case '3':
-            void coracao();
+            void raio();
             break;
         case '4':
             Draw_Pac_man(BUZZER_PIN);
@@ -65,8 +65,8 @@ int main()
         case 'C': 
             teclaC();
             break;
-        case 'D':
-            void raio();
+        // case 'D': 
+            // void raio();
             break;
         case '*':
             printf("Entrando no modo de gravação via USB...\n");
