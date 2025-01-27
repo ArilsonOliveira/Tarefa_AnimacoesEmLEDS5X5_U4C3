@@ -1,13 +1,8 @@
-#include "pico/stdlib.h"
-#include "leds_verde.h"
+#ifndef LEDS_VERDE_H
+#define LEDS_VERDE_H
 
-int main() {
-    stdio_init_all();
+#include "pico/stdlib.h" 
 
-    leds_verde();
+void leds_verde();
 
-    while (true) {
-    }
-
-    return 0;
-}
+#endif
