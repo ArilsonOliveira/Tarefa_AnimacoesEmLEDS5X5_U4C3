@@ -13,6 +13,7 @@
 #include "pato.h"
 #include "girafa.h"
 #include "chuva.h"
+#include "embarcatech.h"
 #include "contagem.h"
 #include "ledsBrancos.h"
 #include "raio.h"
@@ -42,6 +43,9 @@ int main()
             break;
         case '1':
             chuva_pixels();
+            break;
+        case '2':
+            exibir_embarcatech();
             break;
         case '3':
             raio();
