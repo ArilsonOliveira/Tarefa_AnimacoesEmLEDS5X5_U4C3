@@ -14,7 +14,10 @@
 #include "girafa.h"
 #include "chuva.h"
 #include "alfabeto.h"
-
+#include "contagem.h"
+#include "ledsBrancos.h"
+#include "raio.h"
+#include "leds_verde.h"
 
 
 #define PIN_LEDS 7   // Pino de controle
@@ -35,11 +38,17 @@ int main()
     while (true){
         char key = Get_Key_clicked(PINS_ROWS_KEYPAD, PINS_COLUMNS_KEYPAD);
         switch (key){
+        case '0':
+            contagem();
+            break;
         case '1':
             chuva_pixels();
             break;
         case '2':
-            exibir_letra_A();
+            exibir_embarcatech();
+            break;
+        case '3':
+            raio();
             break;
         case '4':
             Draw_Pac_man(BUZZER_PIN);
@@ -56,6 +65,15 @@ int main()
         case '9':
             colorido();
             break;
+        case 'B':
+            teclaB();
+            break;
+        case 'C': 
+            teclaC();
+            break;
+        case 'D': 
+            leds_verde();
+            break;
         case '*':
             printf("Entrando no modo de gravação via USB...\n");
             sleep_ms(1000); // Pequeno delay para garantir que a mensagem seja exibida antes do reboot
@@ -67,6 +85,9 @@ int main()
             sleep_ms(1000);
             printf("Rebootando...\n");
             reset_usb_boot(0, 0); // Reboot para modo de gravação
+            break;
+        case '#':
+            Draw_Leds_Writes();
             break;
         default:
             Leds_Show_All(NULL, false);
