@@ -1,14 +1,6 @@
 #include "leds.h"
 #include "buzzer.h"
 
-// letra A
-static uint32_t letra_A[][3] = {
-    {0, 0, 50}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 50},  // Linha 1 (da direita para a esquerda)
-    {0, 0, 50}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 50},  // Linha 2 (da esquerda para a direita)
-    {0, 0, 50}, {0, 0, 50}, {0, 0, 50}, {0, 0, 50}, {0, 0, 50}, // Linha 3 (da direita para a esquerda)
-    {0, 0, 50}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 50},  // Linha 4 (da esquerda para a direita)
-    {0, 0, 0}, {0, 0, 50}, {0, 0, 50}, {0, 0, 50}, {0, 0, 0}   // Linha 5 (da direita para a esquerda)
-};
 
 
 // Letra C
@@ -154,13 +146,76 @@ static uint32_t letra_B[][3] = {
 };
 
 
-static uint32_t letra_13[][3] = {
-    {0, 0, 0}, {0, 0, 50}, {0, 0, 50}, {0, 0, 50}, {0, 0, 50},  // Linha 1
-    {0, 0, 50}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 50},  // Linha 2
-    {0, 0, 0}, {0, 0, 50}, {0, 0, 50}, {0, 0, 50}, {0, 0, 50},  // Linha 3
-    {0, 0, 50}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 50},  // Linha 4
-    {0, 0, 0}, {0, 0, 50}, {0, 0, 50}, {0, 0, 50}, {0, 0, 50}   // Linha 5
+static uint32_t frame_13[][3] = {
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80},  // Linha 1
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0},  // Linha 2
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80},  // Linha 3
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0},  // Linha 4
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80}   // Linha 5
 };
+
+
+static uint32_t frame_14[][3] = {
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 80},  // Linha 1
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 80},  // Linha 2
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 80},  // Linha 3
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 80},  // Linha 4
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 80}   // Linha 5
+};
+
+
+static uint32_t frame_15[][3] = {
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80},  // Linha 1
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0},  // Linha 2
+    {0, 0, 80}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80},  // Linha 3
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0},  // Linha 4
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}   // Linha 5
+};
+
+
+static uint32_t frame_16[][3] = {
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0},  // Linha 1
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0},  // Linha 2
+    {0, 0, 80}, {0, 0, 80}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0},  // Linha 3
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0},  // Linha 4
+    {0, 0, 80}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}   // Linha 5
+};
+
+
+static uint32_t frame_17[][3] = {
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0},  // Linha 1
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0},  // Linha 2
+    {0, 0, 80}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80}, {0, 0, 0},  // Linha 3
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0},  // Linha 4
+    {0, 0, 80}, {0, 0, 80}, {0, 0, 80}, {0, 0, 0}, {0, 0, 0}   // Linha 5
+};
+
+// letra A
+static uint32_t letra_A[][3] = {
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80},  // Linha 1 (da direita para a esquerda)
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80},  // Linha 2 (da esquerda para a direita)
+    {0, 0, 80}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80}, // Linha 3 (da direita para a esquerda)
+    {0, 0, 80}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80},  // Linha 4 (da esquerda para a direita)
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80}, {0, 0, 0}   // Linha 5 (da direita para a esquerda)
+};
+
+static uint32_t frame_19[][3] = {
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 0}, {0, 0, 8}, {0, 0, 0},  // Linha 1
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0},  // Linha 2
+    {0, 0, 0}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80},  // Linha 3
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 0},  // Linha 4
+    {0, 0, 0}, {0, 0, 0}, {0, 0, 80}, {0, 0, 80}, {0, 0, 80}   // Linha 5
+};
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -187,8 +242,8 @@ static uint32_t letra_13[][3] = {
 }    */
 
 void exibir_letra_A() {
-     Leds_Show_All(letra_A, true); // Mostra a matriz da letra "A"
-    sleep_ms(6500);               // Tempo de exibição da letra
+     //Leds_Show_All(letra_A, true); // Mostra a matriz da letra "A"
+    //sleep_ms(6500);               // Tempo de exibição da letra
     //Leds_Show_All(letra_B, true);
     //sleep_ms(9500);
     //Leds_Show_All(letra_C, true);
@@ -203,8 +258,6 @@ void exibir_letra_A() {
     sleep_ms(500);
     Leds_Show_All(frame_4, true);
     sleep_ms(500);
-    Leds_Show_All(frame_4, true);
-    sleep_ms(500);
     Leds_Show_All(frame_5, true);
     sleep_ms(500);
     Leds_Show_All(frame_6, true);
@@ -212,7 +265,31 @@ void exibir_letra_A() {
     Leds_Show_All(frame_7, true);
     sleep_ms(500);
     Leds_Show_All(frame_8, true);
-    sleep_ms(2500);
+    sleep_ms(500);
+    Leds_Show_All(frame_9, true);
+    sleep_ms(500);
+    Leds_Show_All(frame_10, true);
+    sleep_ms(500);
+    Leds_Show_All(frame_11, true);
+    sleep_ms(500);
+    Leds_Show_All(letra_B, true);
+    sleep_ms(500);
+    Leds_Show_All(frame_13, true);
+    sleep_ms(500);
+    Leds_Show_All(frame_14, true);
+    sleep_ms(500);
+    Leds_Show_All(frame_15, true);
+    sleep_ms(500);
+    Leds_Show_All(frame_16, true);
+    sleep_ms(500);
+    Leds_Show_All(frame_17, true);
+    sleep_ms(500);
+    Leds_Show_All(letra_A, true);
+    sleep_ms(500);
+    Leds_Show_All(frame_19, true);
+    sleep_ms(500);
+    
+    
 
 
 
