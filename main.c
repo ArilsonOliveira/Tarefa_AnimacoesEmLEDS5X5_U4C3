@@ -15,6 +15,7 @@
 #include "chuva.h"
 #include "contagem.h"
 #include "ledsBrancos.h"
+#include "raio.h"
 
 
 #define PIN_LEDS 7   // Pino de controle
@@ -42,7 +43,7 @@ int main()
             chuva_pixels();
             break;
         case '3':
-            void raio();
+            raio();
             break;
         case '4':
             Draw_Pac_man(BUZZER_PIN);
