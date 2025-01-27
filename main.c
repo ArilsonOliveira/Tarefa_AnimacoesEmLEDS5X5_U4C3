@@ -41,6 +41,9 @@ int main()
         case '1':
             chuva_pixels();
             break;
+        case '3':
+            void coracao();
+            break;
         case '4':
             Draw_Pac_man(BUZZER_PIN);
             break;
@@ -61,6 +64,9 @@ int main()
             break;
         case 'C': 
             teclaC();
+            break;
+        case 'D':
+            void raio();
             break;
         case '*':
             printf("Entrando no modo de gravação via USB...\n");
