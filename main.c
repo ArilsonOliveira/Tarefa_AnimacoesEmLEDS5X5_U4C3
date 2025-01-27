@@ -16,7 +16,7 @@
 #include "contagem.h"
 #include "ledsBrancos.h"
 #include "raio.h"
-#include "leds_verde"
+#include "leds_verde.h"
 
 
 #define PIN_LEDS 7   // Pino de controle
