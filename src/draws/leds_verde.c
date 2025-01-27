@@ -13,6 +13,5 @@ static uint32_t frame_verde[][3] = {
 
 void leds_verde() {
     Leds_Show_All(frame_verde, true); 
-    sleep_ms(5000);                   
-    leds_off();                       
+    sleep_ms(5000);                                        
 }
