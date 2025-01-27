@@ -84,6 +84,7 @@ int main()
             printf("3...\n");
             sleep_ms(1000);
             printf("Rebootando...\n");
+            printf("(Caso esteja no wokwi, será necessário reiniciar a simulação para testar novamente os outros botões)\n");
             reset_usb_boot(0, 0); // Reboot para modo de gravação
             break;
         case '#':
