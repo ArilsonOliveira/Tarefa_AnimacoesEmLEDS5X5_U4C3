@@ -6,7 +6,7 @@ Este projeto utiliza o simulador de eletrônica Wokwi, juntamente com o Visual S
 
 ## Link do vídeo da atividade 2.
 
-A colocar
+(https://drive.google.com/file/d/1i8AphAB5TkL33ATl8gUDeOGR4ZsqbDVK/view?usp=sharing)
 
 ## Funcionalidades
 
