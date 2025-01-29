@@ -69,7 +69,7 @@ Para desenvolver o projeto foram necessários os seguintes recursos e ferramenta
 │   ├── draws
 |   |   ├── arco.h
 |   |   ├── chuva.h
-|   |   ├── colorico.h
+|   |   ├── colorido.h
 |   |   ├── contagem.h
 |   |   ├── embarcatech.h
 |   |   ├── girafa.h
@@ -89,7 +89,7 @@ Para desenvolver o projeto foram necessários os seguintes recursos e ferramenta
 |   ├── draws
 |   |   ├── arco.c
 |   |   ├── chuva.c
-|   |   ├── colorico.c
+|   |   ├── colorido.c
 |   |   ├── contagem.c
 |   |   ├── embarcatech.c
 |   |   ├── girafa.c
